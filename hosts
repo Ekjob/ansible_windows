@@ -1,0 +1,15 @@
+[winwave1]
+10.0.0.249
+
+[winwave2]
+10.0.0.252
+
+[windows:children]
+winwave1
+winwave2
+
+[windows:vars]
+ansible_user=ansibletestuser
+ansible_password=p@$$w0rd12
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore

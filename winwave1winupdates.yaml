@@ -1,0 +1,17 @@
+---
+- name: install windows updates and reboot when required
+  hosts: winwave1
+
+  tasks:
+  - name: install windows updates
+    win_updates:
+      category_names:
+      - CriticalUpdates
+      - SecurityUpdates
+      - UpdateRollups
+      state: installed
+    register: update_result
+
+  - name: reboot host if required
+    win_reboot:
+    when: update_result.reboot_required  
