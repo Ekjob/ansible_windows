@@ -1,9 +1,6 @@
 ---
-name: reboot all windows hosts in winwave1
+- name: reboot all windows hosts in winwave1
   hosts: winwave1
   gather_facts: no
-
-  tasks:
-  win_reboot:
-  pause:
-    prompt: Please confirm that you want to reboot all hosts in winwave1 !!! Press enter to continue. Press ctrl+c and then "a" to abort
+  tasks:  
+  - win_reboot:

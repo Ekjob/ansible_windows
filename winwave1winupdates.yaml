@@ -5,10 +5,6 @@
   tasks:
   - name: install windows updates
     win_updates:
-      category_names:
-      - CriticalUpdates
-      - SecurityUpdates
-      - UpdateRollups
       state: installed
     register: update_result
 
